@@ -31,7 +31,30 @@
   <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy"
                                                               width="130">Сделано в HTML Academy</a>в 2017 году</p>
 </footer>
+<script>
+  var fireballSize = 22,
+    wizardSpeed = 3,
+    wizardWidth = 70,
+    getFireballSpeed,
+    getWizardHeight,
+    getWizardX,
+    getWizardY;
 
+  getFireballSpeed = function(left) {
+    var result = left ? 5 : 2;
+    return result;
+  }
+
+  getWizardHeight = function() {
+    return 1.337 * wizardWidth;
+  }
+  getWizardX = function(width){
+    return (width - wizardWidth) / 2;
+  }
+  getWizardY = function(height) {
+    return height / 3;
+  }
+</script>
 <script src="js/game.js" type="application/javascript"></script>
 
 </body>
