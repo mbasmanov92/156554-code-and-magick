@@ -40,11 +40,7 @@ wizardCoat = wizard.querySelector('#wizard-coat');
 wizardCoatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 coatColorNumber = 0;
 coatColorSelect = function () {
-  if (coatColorNumber === wizardCoatColors.length - 1) {
-    coatColorNumber = 0;
-  } else {
-    coatColorNumber++;
-  }
+  coatColorNumber = (coatColorNumber + 1) % wizardCoatColors.length;
   return wizardCoatColors[coatColorNumber];
 };
 wizardCoatChange = function () {
@@ -56,11 +52,7 @@ wizardEyes = wizard.querySelector('#wizard-eyes');
 wizardEyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
 eyesColorNumber = 0;
 eyesColorSelect = function () {
-  if (eyesColorNumber === wizardEyesColors.length - 1) {
-    eyesColorNumber = 0;
-  } else {
-    eyesColorNumber++;
-  }
+  eyesColorNumber = (eyesColorNumber + 1) % wizardEyesColors.length;
   return wizardEyesColors[eyesColorNumber];
 };
 wizardEyesChange = function () {
@@ -72,14 +64,34 @@ fireball = document.querySelector('.setup-fireball-wrap');
 fireballColors = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 fireballColorNumber = 0;
 fireballColorSelect = function () {
-  if (fireballColorNumber === fireballColors.length - 1) {
-    fireballColorNumber = 0;
-  } else {
-    fireballColorNumber++;
-  }
+  fireballColorNumber = (fireballColorNumber + 1) % fireballColors.length;
   return fireballColors[fireballColorNumber];
 };
 fireballChange = function () {
   fireball.style.background = coatColorSelect();
 };
 fireball.addEventListener('click', fireballChange);
+
+//var setupUserName;
+//var changeAttribute;
+//var nameAttribute;
+//var valueAttribute;
+//var hasName;
+//var hasAttribute;
+//
+////setupUserName = document.querySelector('.setup-user-name');
+////changeAttribute = function(nameAttribute, valueAttribute) {
+////  hasName = this.hasAttribute(nameAttribute);
+////  hasAttribute = this.getAttribute(nameAttribute);
+////  if (hasName === true) {
+////    if (hasAttribute !== valueAttribute) {
+////      this.removeAttribute(nameAttribute);
+////      this.setAttribute(nameAttribute, valueAttribute);
+////    }
+////  } else {
+////    this.removeAttribute(nameAttribute);
+////    this.setAttribute(nameAttribute, valueAttribute);
+////  }
+////};
+////
+////setupUserName.changeAttribute('required', true);
