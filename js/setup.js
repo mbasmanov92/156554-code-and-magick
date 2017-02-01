@@ -21,6 +21,7 @@ var fireballColors;
 var fireballColorNumber;
 var fireballColorSelect;
 var fireballChange;
+var setupUserName;
 
 setupOpen = document.querySelector('.setup-open');
 setup = document.querySelector('.setup');
@@ -72,26 +73,6 @@ fireballChange = function () {
 };
 fireball.addEventListener('click', fireballChange);
 
-//var setupUserName;
-//var changeAttribute;
-//var nameAttribute;
-//var valueAttribute;
-//var hasName;
-//var hasAttribute;
-//
-////setupUserName = document.querySelector('.setup-user-name');
-////changeAttribute = function(nameAttribute, valueAttribute) {
-////  hasName = this.hasAttribute(nameAttribute);
-////  hasAttribute = this.getAttribute(nameAttribute);
-////  if (hasName === true) {
-////    if (hasAttribute !== valueAttribute) {
-////      this.removeAttribute(nameAttribute);
-////      this.setAttribute(nameAttribute, valueAttribute);
-////    }
-////  } else {
-////    this.removeAttribute(nameAttribute);
-////    this.setAttribute(nameAttribute, valueAttribute);
-////  }
-////};
-////
-////setupUserName.changeAttribute('required', true);
+setupUserName = document.querySelector('.setup-user-name');
+setupUserName.setAttribute('required', true);
+setupUserName.setAttribute('maxlength', 50);
