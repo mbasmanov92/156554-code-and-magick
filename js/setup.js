@@ -13,7 +13,6 @@ var wizardCoatChange;
 var wizardEyes;
 var wizardEyesColors;
 var eyesColorNumber;
-var wizardEyesColors;
 var eyesColorSelect;
 var wizardEyesChange;
 var fireball;
@@ -69,7 +68,7 @@ fireballColorSelect = function () {
   return fireballColors[fireballColorNumber];
 };
 fireballChange = function () {
-  fireball.style.background = coatColorSelect();
+  fireball.style.background = fireballColorSelect();
 };
 fireball.addEventListener('click', fireballChange);
 
