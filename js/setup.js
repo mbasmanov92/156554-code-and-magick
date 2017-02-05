@@ -1,9 +1,13 @@
 'use strict';
 var setupOpen;
 var setup;
-var setupClickOpen;
+var setupClickOpenMouse;
+var setupClickOpenKeyboard;
+var ENTER;
+var ESC;
 var setupClose;
-var setupClickClose;
+var setupClickCloseMouse;
+var setupClickCloseKeyboard;
 var wizard;
 var wizardCoat;
 var wizardCoatColors;
@@ -24,16 +28,35 @@ var setupUserName;
 
 setupOpen = document.querySelector('.setup-open');
 setup = document.querySelector('.setup');
-setupClickOpen = function () {
+setupClickOpenMouse = function () {
   setup.classList.remove('invisible');
 };
-setupOpen.addEventListener('click', setupClickOpen);
+
+ENTER = 13;
+ESC = 27;
+setupClickOpenKeyboard = function (event) {
+  if (event.keyCode === ENTER) {
+    setup.classList.remove('invisible');
+  }
+  if (event.keyCode === ESC) {
+    setup.classList.add('invisible');
+  }
+};
+setupOpen.addEventListener('click', setupClickOpenMouse);
+setupOpen.addEventListener('keydown', setupClickOpenKeyboard);
 
 setupClose = setup.querySelector('.setup-close');
-setupClickClose = function () {
+setupClickCloseMouse = function () {
   setup.classList.add('invisible');
 };
-setupClose.addEventListener('click', setupClickClose);
+
+setupClickCloseKeyboard = function (event) {
+  if (event.keyCode === ENTER) {
+    setup.classList.add('invisible');
+  }
+};
+setupClose.addEventListener('click', setupClickCloseMouse);
+setupClose.addEventListener('keydown', setupClickCloseKeyboard);
 
 wizard = document.querySelector('#wizard');
 wizardCoat = wizard.querySelector('#wizard-coat');
